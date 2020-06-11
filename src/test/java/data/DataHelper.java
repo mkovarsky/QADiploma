@@ -16,7 +16,7 @@ public class DataHelper {
         private String year;
         private String month;
         private String holder;
-        private String cvv;
+        private String securityCode;
     }
 
     //Позитивный 1
