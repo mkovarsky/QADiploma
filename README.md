@@ -4,16 +4,19 @@
       ``` 
      docker-compose up
       ``` 
-2. Запустить симулятор банковских сервисов командой:
+1. Запустить симулятор банковских сервисов командой:
       ``` 
       npm start
       ``` 
-3. Запустить приложение командой 
-* для mysql   
+1. Запустить приложение командой:   
    ```
    java -jar artifacts/aqa-shop.jar -P:jdbc.url=jdbc:mysql://192.168.99.100:3306/app -P:jdbc.user=user -P:jdbc.password=pass
-     ```
-* для postgres 
+   ```
+1. Запустить тесты командой:
     ```
-   java -jar artifacts/aqa-shop.jar -P:jdbc.url=jdbc:postgresql://192.168.99.100:5432/app -P:jdbc.user=user -P:jdbc.password=pass
+    gradlew clean test allureReport
+    ```
+1. Для просмотра отчета запустить команду:
+    ```
+    gradlew allureServe
     ```

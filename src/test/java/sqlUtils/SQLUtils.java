@@ -42,21 +42,6 @@ public class SQLUtils {
         return status;
     }
 
-    public static String getAmount(String payment_id) throws SQLException {
-        String amountSQL = "SELECT amount FROM payment_entity WHERE transaction_id =?; ";
-        String amount = null;
-        try (val conn = getConnection();
-             val statusStmt = conn.prepareStatement(amountSQL)) {
-            statusStmt.setString(1, payment_id);
-            try (val rs = statusStmt.executeQuery()) {
-                if (rs.next()) {
-                    amount = rs.getString("amount");
-                }
-            }
-        }
-        return amount;
-    }
-
     public static String getStatusForCredit(String payment_id) throws SQLException {
         String statusSQL = "SELECT status FROM credit_request_entity WHERE bank_id =?; ";
         String status = null;

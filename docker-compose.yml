@@ -10,12 +10,6 @@ services:
       - MYSQL_DATABASE=app
       - MYSQL_USER=user
       - MYSQL_PASSWORD=pass
-  postgres:
-    image: postgres:12.0-alpine
-    ports:
-      - '5432:5432'
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=pass
-      - POSTGRES_DB=postgres
+
+
 

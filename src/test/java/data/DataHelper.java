@@ -19,37 +19,30 @@ public class DataHelper {
         private String securityCode;
     }
 
-    //Позитивный 1
     public static CardInformation getValidCardInformation() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.futureYear().getYear(), dateGenerator.futureMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
-    //Позитивный 2
     public static CardInformation getInvalidCardInformation() {
         return new CardInformation(cardNumberGenerator.getDeclinedCardNumber(), dateGenerator.futureYear().getYear(), dateGenerator.futureMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
-    //Негативный 1
     public static CardInformation getEmptyCardInformation() {
         return new CardInformation(" ", " ", " ", " ", " ");
     }
 
-    //Негативный 2
     public static CardInformation getCardInformationWithInvalidNumber() {
         return new CardInformation(cardNumberGenerator.getInvalidCardNumber(), dateGenerator.futureYear().getYear(), dateGenerator.futureMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
-    //Негативный 3
     public static CardInformation getCardInformationWithExpiredYear() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.pastYear().getYear(), dateGenerator.currentMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
-    //Негативный 4
     public static CardInformation getCardInformationWithExpiredMonth() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.currentYear().getYear(), dateGenerator.pastMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
-    //Негативный 5
     public static CardInformation getWrongCardInformationWithWrongFormat() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.wrongYear().getYear(), dateGenerator.wrongMonth().getMonth(), "@", "99");
     }
