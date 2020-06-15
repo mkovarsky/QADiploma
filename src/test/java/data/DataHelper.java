@@ -40,17 +40,17 @@ public class DataHelper {
     }
 
     //Негативный 3
-    public static CardInformation getCardInformationWithPastYear() {
+    public static CardInformation getCardInformationWithExpiredYear() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.pastYear().getYear(), dateGenerator.currentMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
     //Негативный 4
-    public static CardInformation getCardInformationWithPastMonth() {
+    public static CardInformation getCardInformationWithExpiredMonth() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.currentYear().getYear(), dateGenerator.pastMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
     //Негативный 5
-    public static CardInformation getWrongFormatCardInformation() {
+    public static CardInformation getWrongCardInformationWithWrongFormat() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.wrongYear().getYear(), dateGenerator.wrongMonth().getMonth(), "@", "99");
     }
 }
