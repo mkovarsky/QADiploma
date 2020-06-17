@@ -17,18 +17,8 @@ public class DateGenerator {
         private String year;
     }
 
-    public Year futureYear() {
-        LocalDate newDate = today.plusYears(5);
-        return new Year(formatterYears.format(newDate));
-    }
-
-    public Year pastYear() {
-        LocalDate newDate = today.minusYears(2);
-        return new Year(formatterYears.format(newDate));
-    }
-
-    public Year currentYear() {
-        LocalDate newDate = today;
+    public Year shiftYear(int numberOfYears) {
+        LocalDate newDate = today.plusYears(numberOfYears);
         return new Year(formatterYears.format(newDate));
     }
 
@@ -41,24 +31,12 @@ public class DateGenerator {
         private String month;
     }
 
-    public Month futureMonth() {
-        LocalDate newDate = today.plusMonths(1);
+    public Month shiftMonth(int numberOfMonths) {
+        LocalDate newDate = today.plusMonths(numberOfMonths);
         return new Month(formatterMonth.format(newDate));
-    }
-
-    public Month pastMonth() {
-        LocalDate newDate = today.minusMonths(2);
-        return new Month(formatterMonth.format(newDate));
-    }
-
-    public Month currentMonth() {
-        LocalDate newDate = today;
-        return new Month(formatterYears.format(newDate));
     }
 
     public Month wrongMonth() {
         return new Month(Integer.toString(faker.number().numberBetween(13, 99)));
     }
-
 }
-

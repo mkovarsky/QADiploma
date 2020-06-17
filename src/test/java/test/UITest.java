@@ -6,7 +6,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import lombok.val;
 import org.junit.jupiter.api.*;
 import page.TourOfferPage;
-import sqlUtils.SQLUtils;
+import sqlUtils.SqlUtils;
 
 import java.sql.SQLException;
 
@@ -41,8 +41,8 @@ public class UITest {
         val approvedCardInformation = DataHelper.getValidCardInformation();
         paymentPage.enterCardData(approvedCardInformation);
         paymentPage.successfulPayment();
-        val paymentId = SQLUtils.getPaymentId();
-        val statusForPayment = SQLUtils.getStatusForPayment(paymentId);
+        val paymentId = SqlUtils.getPaymentId();
+        val statusForPayment = SqlUtils.getStatusForPayment(paymentId);
         Assertions.assertEquals("APPROVED", statusForPayment);
     }
 
@@ -54,8 +54,8 @@ public class UITest {
         val approvedCardInformation = DataHelper.getValidCardInformation();
         paymentPage.enterCardData(approvedCardInformation);
         paymentPage.successfulPayment();
-        val paymentId = SQLUtils.getPaymentId();
-        val statusForCredit = SQLUtils.getStatusForCredit(paymentId);
+        val paymentId = SqlUtils.getPaymentId();
+        val statusForCredit = SqlUtils.getStatusForCredit(paymentId);
         assertEquals("APPROVED", statusForCredit);
     }
 
@@ -67,8 +67,8 @@ public class UITest {
         val declinedCardInformation = DataHelper.getInvalidCardInformation();
         paymentPage.enterCardData(declinedCardInformation);
         paymentPage.notSuccessfulPayment();
-        val paymentId = SQLUtils.getPaymentId();
-        val statusForPayment = SQLUtils.getStatusForPayment(paymentId);
+        val paymentId = SqlUtils.getPaymentId();
+        val statusForPayment = SqlUtils.getStatusForPayment(paymentId);
         assertThat(statusForPayment, equalTo("DECLINED"));
     }
     @DisplayName("Позитивный сценарий. Покупка в кредит по данным отклоняемой карты.")
@@ -79,8 +79,8 @@ public class UITest {
         val declinedCardInformation = DataHelper.getInvalidCardInformation();
         paymentPage.enterCardData(declinedCardInformation);
         paymentPage.notSuccessfulPayment();
-        val paymentId = SQLUtils.getPaymentId();
-        val statusFortCredit = SQLUtils.getStatusForCredit(paymentId);
+        val paymentId = SqlUtils.getPaymentId();
+        val statusFortCredit = SqlUtils.getStatusForCredit(paymentId);
         assertThat(statusFortCredit, equalTo("DECLINED"));
     }
     @DisplayName("Негативный сценарий. Покупка с незаполненными данными карты.")

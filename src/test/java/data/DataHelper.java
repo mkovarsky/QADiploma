@@ -20,11 +20,11 @@ public class DataHelper {
     }
 
     public static CardInformation getValidCardInformation() {
-        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.futureYear().getYear(), dateGenerator.futureMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
+        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.shiftYear(5).getYear(), dateGenerator.shiftMonth(2).getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
     public static CardInformation getInvalidCardInformation() {
-        return new CardInformation(cardNumberGenerator.getDeclinedCardNumber(), dateGenerator.futureYear().getYear(), dateGenerator.futureMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
+        return new CardInformation(cardNumberGenerator.getDeclinedCardNumber(), dateGenerator.shiftYear(5).getYear(), dateGenerator.shiftMonth(2).getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
     public static CardInformation getEmptyCardInformation() {
@@ -32,15 +32,15 @@ public class DataHelper {
     }
 
     public static CardInformation getCardInformationWithInvalidNumber() {
-        return new CardInformation(cardNumberGenerator.getInvalidCardNumber(), dateGenerator.futureYear().getYear(), dateGenerator.futureMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
+        return new CardInformation(cardNumberGenerator.getInvalidCardNumber(), dateGenerator.shiftYear(5).getYear(), dateGenerator.shiftMonth(2).getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
     public static CardInformation getCardInformationWithExpiredYear() {
-        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.pastYear().getYear(), dateGenerator.currentMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
+        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.shiftYear(-2).getYear(), dateGenerator.shiftMonth(0).getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
     public static CardInformation getCardInformationWithExpiredMonth() {
-        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.currentYear().getYear(), dateGenerator.pastMonth().getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
+        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.shiftYear(0).getYear(), dateGenerator.shiftMonth(-1).getMonth(), faker.name().fullName(), Integer.toString(faker.number().numberBetween(100, 999)));
     }
 
     public static CardInformation getWrongCardInformationWithWrongFormat() {

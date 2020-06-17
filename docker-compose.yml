@@ -10,6 +10,19 @@ services:
       - MYSQL_DATABASE=app
       - MYSQL_USER=user
       - MYSQL_PASSWORD=pass
-
+  postgres:
+    image: postgres:12.0-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=app
+    ports:
+      - '5432:5432'
+  node-app:
+    build: gate-simulator
+    image: node-app:1.0
+    ports:
+      - '9999:9999'
 
 
