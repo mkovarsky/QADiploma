@@ -8,21 +8,23 @@
    ``` 
    npm start
    ``` 
-1. Запустить приложение командой   
-   для MySQL:
+1. Запустить приложение командой 
+  
+   **для MySQL:**
    ```
    java -Dspring.datasource.url=jdbc:mysql://192.168.99.100:3306/app -jar artifacts/aqa-shop.jar
    ```
-   для Postgres:
+   **для Postgres:**
    ```
    java -Dspring.datasource.url=jdbc:postgresql://192.168.99.100:5432/app -jar artifacts/aqa-shop.jar
    ```
-1. Запустить тесты командой:
-    для MySQL:
+1. Запустить тесты командой
+
+    **для MySQL:**
     ```
     gradlew clean test allureReport -Ddb.url=jdbc:mysql://192.168.99.100:3306/app
     ```
-   для Postgres:
+   **для Postgres:**
    ```
    gradlew clean test allureReport -Ddb.url=jdbc:postgresql://192.168.99.100:5432/app
    ```
