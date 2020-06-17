@@ -112,17 +112,55 @@ public class SadPathTest {
     public void shouldNotConfirmPaymentWithWrongFormatFieldsCard() {
         val tourOfferPage = new TourOfferPage();
         val paymentPage = tourOfferPage.payByCard();
-        val invalidCardInformation = DataHelper.getWrongCardInformationWithWrongFormat();
+        val invalidCardInformation = DataHelper.getCardInformationWithWrongFormat();
         paymentPage.enterCardData(invalidCardInformation);
         paymentPage.invalidFormat();
     }
 
-    @DisplayName("Негативный сценарий. Покупка в кредит по по данным карты с неверным форматом полей.")
+    @DisplayName("Негативный сценарий. Покупка в кредит по данным карты с неверным форматом полей.")
     @Test
     public void shouldNotConfirmBuyingOnCreditWithWrongFormatFieldsCard() {
         val tourOfferPage = new TourOfferPage();
         val paymentPage = tourOfferPage.buyOnCredit();
-        val invalidCardInformation = DataHelper.getWrongCardInformationWithWrongFormat();
+        val invalidCardInformation = DataHelper.getCardInformationWithWrongFormat();
+        paymentPage.enterCardData(invalidCardInformation);
+        paymentPage.invalidFormat();
+    }
+    @DisplayName("Негативный сценарий. Покупка по карте с именем держателя на кириллице.")
+    @Test
+    public void shouldNotConfirmPaymentWithCyrillicHolderFieldCard() {
+        val tourOfferPage = new TourOfferPage();
+        val paymentPage = tourOfferPage.payByCard();
+        val invalidCardInformation = DataHelper.getCardInformationWithCyrillicName();
+        paymentPage.enterCardData(invalidCardInformation);
+        paymentPage.invalidFormat();
+    }
+
+    @DisplayName("Негативный сценарий. Покупка в кредит  по данным карты с именем держателя на кириллице.")
+    @Test
+    public void shouldNotConfirmBuyingOnCreditWithCyrillicHolderFieldCard() {
+        val tourOfferPage = new TourOfferPage();
+        val paymentPage = tourOfferPage.buyOnCredit();
+        val invalidCardInformation = DataHelper.getCardInformationWithCyrillicName();
+        paymentPage.enterCardData(invalidCardInformation);
+        paymentPage.invalidFormat();
+    }
+    @DisplayName("Негативный сценарий. Покупка по карте с цифрами в имени держателя.")
+    @Test
+    public void shouldNotConfirmPaymentWithNumericHolderFieldCard() {
+        val tourOfferPage = new TourOfferPage();
+        val paymentPage = tourOfferPage.payByCard();
+        val invalidCardInformation = DataHelper.getCardInformationWithNumericName();
+        paymentPage.enterCardData(invalidCardInformation);
+        paymentPage.invalidFormat();
+    }
+
+    @DisplayName("Негативный сценарий. Покупка в кредит  по данным карты с цифрами в имени держателя.")
+    @Test
+    public void shouldNotConfirmBuyingOnCreditWithNumericHolderFieldCard() {
+        val tourOfferPage = new TourOfferPage();
+        val paymentPage = tourOfferPage.buyOnCredit();
+        val invalidCardInformation = DataHelper.getCardInformationWithNumericName();
         paymentPage.enterCardData(invalidCardInformation);
         paymentPage.invalidFormat();
     }
