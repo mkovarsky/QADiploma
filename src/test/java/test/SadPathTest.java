@@ -107,24 +107,24 @@ public class SadPathTest {
         paymentPage.expiredMonth();
     }
 
-    @DisplayName("Негативный сценарий. Покупка по карте с неверным форматом полей.")
+    @DisplayName("Негативный сценарий. Покупка по карте с неверным форматом полей даты.")
     @Test
     public void shouldNotConfirmPaymentWithWrongFormatFieldsCard() {
         val tourOfferPage = new TourOfferPage();
         val paymentPage = tourOfferPage.payByCard();
-        val invalidCardInformation = DataHelper.getCardInformationWithWrongFormat();
+        val invalidCardInformation = DataHelper.getCardInformationWithWrongFormatDate();
         paymentPage.enterCardData(invalidCardInformation);
-        paymentPage.invalidFormat();
+        paymentPage.expiredMonth();
     }
 
-    @DisplayName("Негативный сценарий. Покупка в кредит по данным карты с неверным форматом полей.")
+    @DisplayName("Негативный сценарий. Покупка в кредит по данным карты с неверным форматом полей даты.")
     @Test
     public void shouldNotConfirmBuyingOnCreditWithWrongFormatFieldsCard() {
         val tourOfferPage = new TourOfferPage();
         val paymentPage = tourOfferPage.buyOnCredit();
-        val invalidCardInformation = DataHelper.getCardInformationWithWrongFormat();
+        val invalidCardInformation = DataHelper.getCardInformationWithWrongFormatDate();
         paymentPage.enterCardData(invalidCardInformation);
-        paymentPage.invalidFormat();
+        paymentPage.expiredMonth();
     }
     @DisplayName("Негативный сценарий. Покупка по карте с именем держателя на кириллице.")
     @Test

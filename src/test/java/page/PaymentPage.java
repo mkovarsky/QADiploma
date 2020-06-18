@@ -41,9 +41,11 @@ public class PaymentPage {
     public void invalidFormat() {
         invalidFormatError.shouldBe(Condition.visible);
     }
+
     public void expiredYear() {
         expiredYearError.shouldBe(Condition.visible);
     }
+
     public void expiredMonth() {
         expiredMonthError.shouldBe(Condition.visible);
     }

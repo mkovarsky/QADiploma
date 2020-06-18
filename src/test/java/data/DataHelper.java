@@ -44,8 +44,8 @@ public class DataHelper {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.shiftYear(0).getYear(), dateGenerator.shiftMonth(-1).getMonth(), enFaker.name().fullName(), Integer.toString(enFaker.number().numberBetween(100, 999)));
     }
 
-    public static CardInformation getCardInformationWithWrongFormat() {
-        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.wrongYear().getYear(), dateGenerator.wrongMonth().getMonth(), "@", "99");
+    public static CardInformation getCardInformationWithWrongFormatDate() {
+        return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.wrongYear().getYear(), dateGenerator.wrongMonth().getMonth(), enFaker.name().fullName(), Integer.toString(enFaker.number().numberBetween(100, 999)));
     }
     public static CardInformation getCardInformationWithCyrillicName() {
         return new CardInformation(cardNumberGenerator.getApprovedCardNumber(), dateGenerator.shiftYear(5).getYear(), dateGenerator.shiftMonth(2).getMonth(), ruFaker.name().fullName(), Integer.toString(enFaker.number().numberBetween(100, 999)));
