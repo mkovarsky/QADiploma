@@ -4,10 +4,6 @@
    ``` 
    docker-compose up
    ``` 
-1. Запустить симулятор банковских сервисов командой:
-   ``` 
-   npm start
-   ``` 
 1. Запустить приложение командой 
   
    **для MySQL:**
@@ -22,11 +18,11 @@
 
     **для MySQL:**
     ```
-    gradlew clean test allureReport -Ddb.url=jdbc:mysql://192.168.99.100:3306/app
+    gradlew clean test allureReport -Ddb.url=jdbc:mysql://192.168.99.100:3306/app -Dapp.url=http://localhost:8080
     ```
    **для Postgres:**
    ```
-   gradlew clean test allureReport -Ddb.url=jdbc:postgresql://192.168.99.100:5432/app
+   gradlew clean test allureReport -Ddb.url=jdbc:postgresql://192.168.99.100:5432/app -Dapp.url=http://localhost:8080
    ```
 1. Для просмотра отчета запустить команду:
     ```

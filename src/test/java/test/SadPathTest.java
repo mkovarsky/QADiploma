@@ -19,7 +19,8 @@ public class SadPathTest {
 
     @BeforeEach
     void setUp() {
-        open("http://localhost:8080");
+        String appUrl = System.getProperty("app.url");
+        open(appUrl);
     }
 
     @AfterAll
@@ -126,6 +127,7 @@ public class SadPathTest {
         paymentPage.enterCardData(invalidCardInformation);
         paymentPage.expiredMonth();
     }
+
     @DisplayName("Негативный сценарий. Покупка по карте с именем держателя на кириллице.")
     @Test
     public void shouldNotConfirmPaymentWithCyrillicHolderFieldCard() {
@@ -145,6 +147,7 @@ public class SadPathTest {
         paymentPage.enterCardData(invalidCardInformation);
         paymentPage.invalidFormat();
     }
+
     @DisplayName("Негативный сценарий. Покупка по карте с цифрами в имени держателя.")
     @Test
     public void shouldNotConfirmPaymentWithNumericHolderFieldCard() {
