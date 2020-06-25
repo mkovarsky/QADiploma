@@ -15,7 +15,7 @@
 * 4 позитивных (по 2 для каждого способа оплаты)
 * 14 негативных (по 2 для каждого способа оплаты)
 
-[Соотношение успешных/неуспешных тестов: 6/12](https://prnt.sc/t4bvta)
+![Соотношение успешных/неуспешных тестов: 6/12](https://github.com/mkovarsky/QADiploma/blob/master/documentation/allureScreenshot.png)
 
 [Заведено 5 Issue](https://github.com/mkovarsky/QADiploma/issues)
  
