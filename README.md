@@ -1,3 +1,10 @@
+## Документация:
+[План](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Plan.md)
+
+[Отчет по тестированию](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Report.md)
+
+[Отчет по автоматизации](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Summary.md)
+
 ## Запуск приложения
 
 1. Запустить контейнеры с симулятором банковских сервисов, двумя СУБД и двумя СУТ на разных портах (обращающимся каждый к своей БД) из корневой директории проекта командой: 
