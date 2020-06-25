@@ -1,9 +1,9 @@
-## Документация:
-[План](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Plan.md)
+## Документация
+* [План](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Plan.md)
 
-[Отчет по тестированию](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Report.md)
+* [Отчет по тестированию](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Report.md)
 
-[Отчет по автоматизации](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Summary.md)
+* [Отчет по автоматизации](https://github.com/mkovarsky/QADiploma/blob/master/documentation/Summary.md)
 
 ## Запуск приложения
 
